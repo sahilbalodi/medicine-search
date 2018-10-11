@@ -1,10 +1,14 @@
 const Hapi = require('hapi');
 const vision = require('@google-cloud/vision');
+const posTagger = require('wink-pos-tagger');
 const path = require('path');
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = 'secrets/index.json';
-
 const client = new vision.ImageAnnotatorClient();
+// Create an instance of the pos tagger.
+const tagger = posTagger();
+const posTokens = ['NN', 'NNS', 'NNP', 'NNPS'];
+// , 'FW', 'RBR', 'RBS', 'RB'
 
 const Port = 8080;
 const server = new Hapi.Server();
@@ -29,12 +33,20 @@ server.route([
         .then((results) => {
           const textAnnotationsDescriptions = [];
           const text = results[0].textAnnotations;
-          text.forEach((textAnnotations) => {
-            const Lines = textAnnotations.description.split('\n');
-            Lines.forEach((line) => {
-              textAnnotationsDescriptions.push(line);
+          // text.forEach((textAnnotations) => {
+          const textAnnotations = text[0];
+          const Lines = textAnnotations.description.split('\n');
+          Lines.forEach((line) => {
+            const tokens = tagger.tagSentence(line);
+            let newLine = '';
+            tokens.forEach((token) => {
+              if (posTokens.indexOf(token.pos) !== -1) {
+                newLine = `${newLine} ${token.value}`;
+              }
             });
+            if (newLine.length !== 0) { textAnnotationsDescriptions.push(newLine); }
           });
+          // });
           response({ statusCode: 200, textAnnotationsDescriptions });
         })
         .catch((err) => {
