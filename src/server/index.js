@@ -10,10 +10,10 @@ const tagger = posTagger();
 const posTokens = ['NN', 'NNS', 'NNP', 'NNPS'];
 // , 'FW', 'RBR', 'RBS', 'RB'
 
-const Port = 8080;
+const Port = 8000;
 const server = new Hapi.Server();
 server.connection({
-  host: 'localhost',
+  host: '0.0.0.0',
   port: Port,
 });
 
