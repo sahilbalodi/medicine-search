@@ -31,33 +31,31 @@
         ]
     },
     {
-        "name": "Roles D",
-        "Manufacturer": "Ranbaxy Laboratories Ltd.",
-        "Composition": "Rabeprazole",
+        "name": "Rizact",
+        "Manufacturer": "Cipla Ltd.",
+        "Composition": "Rizatriptan",
         "Prescription": "required",
-        "Description": "Roles D Tablet is a drug used in the treatment of stomach ulcers, Gastroesophageal reflux disease (GERD) and other acidity related disorders by decreasing the acid produced in the stomach.",
+        "Description": "Rizact 10 mg Tablet is used to reduce the symptoms of migraine headaches. It inhibits the substances that cause headaches and sensitivity to sound and light. It does not help in the prevention and reduction of frequent attacks of a migraine headache.",
         "Uses": [
-            "Erosive Esophagitis",
-            "Gastroesophagal Reflux Disease",
-            "Helicobacter pylori Infection",
-            "Zollinger-Ellison Syndrome",
-            "Other forms of Ulcers"
+            "Migraine"
         ],
         "Side effects": [
-            "Headache",
-            "Altered sense of taste",
-            "Running nose and cough",
-            "Diarrhea",
-            "Nausea or vomiting",
-            "Skin Rash",
-            "Anorexia"
+            "Chest pain",
+            "DrowsinessSEVERE",
+            "DizzinessSEVERE",
+            "Shortness of breath",
+            "Itching",
+            "Numbness",
+            "Dry mouth"
         ],
         "When not to use?": [
-            "Allergy"
+            "Allergy",
+            "Cardiovascular Disease",
+            "Uncontrolled hypertension"
         ]
     },
     {
-        "name": "Thyronorm 50 mcg",
+        "name": "Thyronorm",
         "Manufacturer": "Abbott India Ltd.",
         "Composition": "Levo-Thyroxine (Synthetic)",
         "Prescription": "required",
