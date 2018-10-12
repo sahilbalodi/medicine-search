@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Crocin Advance",
+        "Manufacturer": "Glaxosmithkline Pharmaceuticals Ltd.",
+        "Composition": "Paracetamol",
+        "Prescription": "Not required",
+        "Description": "Crocin Advance Tablet is used to temporarily relieve fever and mild to moderate pain such as muscle ache, headache, toothache, arthritis, and backache. This medicine should be used with caution in patients with liver diseases due to the increased risk of severe adverse effects.",
+        "Uses": [
+            "Fever",
+            "Headache",
+            "Muscle Pain",
+            "Menstrual Cramps",
+            "Post Immunization Pyrexia",
+            "Arthritis"
+        ],
+        "Side effects": [
+            "Major & minor side effects for Crocin Advance Tablet",
+            "Nausea or Vomiting",
+            "Fever",
+            "Allergic skin reaction",
+            "Gastric / Mouth Ulcer",
+            "AnemiaRARE",
+            "Fatigue",
+            "Unusual bleeding or bruising"
+        ],
+        "When not to use?": [
+            "Contraindications of Crocin Advance Tablet",
+            "Allergy",
+            "Analgesic Nephropathy (Kidney Disease)",
+            "Severe liver impairment"
+        ]
+    },
+    {
+        "name": "Roles D",
+        "Manufacturer": "Ranbaxy Laboratories Ltd.",
+        "Composition": "Rabeprazole",
+        "Prescription": "required",
+        "Description": "Roles D Tablet is a drug used in the treatment of stomach ulcers, Gastroesophageal reflux disease (GERD) and other acidity related disorders by decreasing the acid produced in the stomach.",
+        "Uses": [
+            "Erosive Esophagitis",
+            "Gastroesophagal Reflux Disease",
+            "Helicobacter pylori Infection",
+            "Zollinger-Ellison Syndrome",
+            "Other forms of Ulcers"
+        ],
+        "Side effects": [
+            "Headache",
+            "Altered sense of taste",
+            "Running nose and cough",
+            "Diarrhea",
+            "Nausea or vomiting",
+            "Skin Rash",
+            "Anorexia"
+        ],
+        "When not to use?": [
+            "Allergy"
+        ]
+    },
+    {
+        "name": "Thyronorm 50 mcg",
+        "Manufacturer": "Abbott India Ltd.",
+        "Composition": "Levo-Thyroxine (Synthetic)",
+        "Prescription": "required",
+        "Description": "Thyronorm 50 mcg Tablet is similar to the hormone produced by the thyroid gland. It is primarily used to treat Hypothyroidism, a condition where the thyroid gland does not produce sufficient quantities of hormones. It is also used to treat certain other disorders associated with the thyroid gland.",
+        "Uses": [
+            "Hypothyroidism",
+            "Thyroid cancer",
+            "Myxedema coma"
+        ],
+        "Side effects": [
+            "Headache",
+            "Shaking and trembling of arms and feet",
+            "Running nose and cough",
+            "Diarrhea",
+            "Nausea or vomiting",
+            "Sleeplessnes",
+            "Nervousness and irritability"
+        ],
+        "When not to use?": [
+            "Allergy",
+            "Thyrotoxicosis",
+            "Adrenal insufficiency",
+            "Acute myocardial infarction"
+        ]
+    }
+]

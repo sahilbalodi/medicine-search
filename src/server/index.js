@@ -3,6 +3,12 @@ const vision = require('@google-cloud/vision');
 const posTagger = require('wink-pos-tagger');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
+
+const data = require('../../data.json');
+
+const medicineList = [];
+data.forEach((medicine) => { medicineList.push(medicine.name); });
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = 'secrets/index.json';
 const client = new vision.ImageAnnotatorClient();
@@ -74,7 +80,6 @@ server.route([
         .then((results) => {
           const textAnnotationsDescriptions = [];
           const text = results[0].textAnnotations;
-          // text.forEach((textAnnotations) => {
           const textAnnotations = text[0];
           const Lines = textAnnotations.description.split('\n');
           Lines.forEach((line) => {
@@ -87,8 +92,14 @@ server.route([
             });
             if (newLine.length !== 0) { textAnnotationsDescriptions.push(newLine); }
           });
-          // });
-          response({ statusCode: 200, textAnnotationsDescriptions });
+          textAnnotationsDescriptions.forEach((line) => {
+            medicineList.forEach((medicine) => {
+              if (line.indexOf(medicine) !== -1) {
+                response({ statusCode: 200, data: _.find(data, ['name', medicine]) });
+              }
+            });
+          });
+          response({ statusCode: 200, message: 'NOT FOUND' });
         })
         .catch((err) => {
           console.error('ERROR:', err);
