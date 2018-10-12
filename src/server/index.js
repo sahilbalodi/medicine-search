@@ -94,7 +94,7 @@ server.route([
           });
           textAnnotationsDescriptions.forEach((line) => {
             medicineList.forEach((medicine) => {
-              if (line.indexOf(medicine) !== -1) {
+              if ((line.toLowerCase()).indexOf(medicine.toLowerCase()) !== -1) {
                 response({ statusCode: 200, data: _.find(data, ['name', medicine]) });
               }
             });
