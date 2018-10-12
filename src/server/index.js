@@ -58,6 +58,7 @@ server.route([
     method: 'POST',
     path: '/error',
     handler: (request, response) => {
+      console.log(request.payload);
       response(request.payload);
     },
   }, {
