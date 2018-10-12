@@ -65,6 +65,7 @@ server.route([
     method: 'POST',
     path: '/image',
     handler: (request, response) => {
+      console.log(request);
       const writeStream = fs.createWriteStream(path.resolve(__dirname, '../resources/test.jpeg'), { flags: 'w' });
       writeStream.write(request.payload.file);
       writeStream.end();
