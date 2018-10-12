@@ -3,6 +3,7 @@ const vision = require('@google-cloud/vision');
 const posTagger = require('wink-pos-tagger');
 const fs = require('fs');
 const path = require('path');
+const search = require('../utils/webMdSearch');
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = 'secrets/index.json';
 const client = new vision.ImageAnnotatorClient();
@@ -58,14 +59,14 @@ server.route([
     method: 'POST',
     path: '/error',
     handler: (request, response) => {
-      console.log(request.payload);
+      // console.log(request.payload);
       response(request.payload);
     },
   }, {
     method: 'POST',
     path: '/image',
     handler: (request, response) => {
-      console.log(request);
+      // console.log(request);
       const writeStream = fs.createWriteStream(path.resolve(__dirname, '../resources/test.jpeg'), { flags: 'w' });
       writeStream.write(request.payload.file);
       writeStream.end();
@@ -85,7 +86,11 @@ server.route([
                 newLine = `${newLine} ${token.value}`;
               }
             });
-            if (newLine.length !== 0) { textAnnotationsDescriptions.push(newLine); }
+            if (newLine.length !== 0) {
+              // console.log('')
+              search(newLine);
+              textAnnotationsDescriptions.push(newLine);
+            }
           });
           // });
           response({ statusCode: 200, textAnnotationsDescriptions });
